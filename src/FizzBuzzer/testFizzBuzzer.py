@@ -19,7 +19,7 @@ class testFizzBuzzer(unittest.TestCase):
         pass
 
 
-    def test_Return_Fizz_When_Integer_Number_Is_Devisible_By_Number_Three(self):
+    def test_return_Fizz_when_integer_number_is_devisible_by_number_three(self):
         expected_value = 'Fizz'
         user_input = 3
         
@@ -28,7 +28,7 @@ class testFizzBuzzer(unittest.TestCase):
         error_message = "return Fizz if the user gives 3: read:" + str(received_value) + " whereas " + str(expected_value) 
         self.assertEquals(received_value, expected_value, error_message)
         
-    def test_Return_Buzz_When_Integer_Number_Is_Devisible_By_Number_Five(self):
+    def test_return_Buzz_when_integer_number_is_devisible_by_number_five(self):
         expected_value = 'Buzz'
         user_input = 5
         
