@@ -24,6 +24,8 @@ class FizzBuzzer():
                 by both 3 and 5, otherwise the provided integer will be return
         
         '''
+        if type(userInput) != int:
+            raise Exception('Integer was expected')
     
         return "Fizz"*(userInput%3==0)+"Buzz"*(userInput%5==0) or str(userInput)
         

@@ -55,6 +55,15 @@ class testFizzBuzzer(unittest.TestCase):
         error_message = "return FizzBuzz if the user gives 15, read:" + str(received_value) + " whereas " + str(expected_value)
         self.assertEquals(received_value, expected_value, error_message)
 
+    def test_an_exception_is_raised_if_a_bad_input_is_provided(self):        
+        user_input = "somethingBad!"
+        
+        with self.assertRaises(Exception) as context:
+            self.FizzBuzzer.check_User_Input(user_input)
+        
+        error_message = 'an exception with message "Integer was expected" should have been raised'
+        self.assertTrue('Integer was expected' in context.exception, error_message)
+
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']
     unittest.main()
