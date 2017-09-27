@@ -9,8 +9,7 @@ Created on 22 Sep 2017
 import json
 
 class FizzBuzzer():
-    ''' Service to assess user input '''
-    
+    '''Fizz Buzzer Service to assess user input '''  
 
     
     def __init__(self):
@@ -40,6 +39,8 @@ class FizzBuzzer():
     
     def get_output(self, userInput):
         '''
+        Generate json output according to the FizzBuzz rules
+        
         @param userInput: integer number
         @return: the output of userInput in the form of a json file
         '''
