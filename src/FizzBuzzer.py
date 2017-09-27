@@ -22,12 +22,8 @@ class FizzBuzzer():
                 by both 3 and 5, otherwise the provided integer will be return
         
         '''
-        
-        
-        
-        output = 'Fizz' ? (userInput%3) == 0 : userInput
     
-        return output
+        return "Fizz"*(userInput%3==0)+"Buzz"*(userInput%5==0) or str(userInput)
     
 
 if __name__ == '__main__':
