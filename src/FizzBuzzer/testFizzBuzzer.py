@@ -5,6 +5,7 @@ Created on 22 Sep 2017
 @author: Christos Tsotskas
 '''
 import unittest
+import json
 
 from FizzBuzzer import FizzBuzzer
 
@@ -63,6 +64,23 @@ class testFizzBuzzer(unittest.TestCase):
         
         error_message = 'an exception with message "Integer was expected" should have been raised'
         self.assertTrue('Integer was expected' in context.exception, error_message)
+        
+    def test_a_json_file_is_generated_as_an_output(self):
+        expected_value = 'FizzBuzz'
+        check_for_json_type_output = False
+        user_input = 15
+        
+        received_value = self.FizzBuzzer.get_output(user_input)
+        
+        try:
+            check_for_json_type_output = json.loads(received_value)
+            check_for_json_type_output = True
+        except ValueError as e:
+            print('invalid json: %s' % e)
+            
+            
+        self.assertTrue(check_for_json_type_output,"a valid json file was expected!")
+    
 
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']

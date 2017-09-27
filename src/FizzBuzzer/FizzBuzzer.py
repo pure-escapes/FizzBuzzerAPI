@@ -6,13 +6,15 @@ Created on 22 Sep 2017
 
 '''
 
+import json
+
 class FizzBuzzer():
     ''' Service to assess user input '''
     
 
     
     def __init__(self):
-        pass
+        self.json_output = {"output":None}
     
     def __return_fizz_buzz(self, userInput):
         '''
@@ -33,10 +35,20 @@ class FizzBuzzer():
     def check_User_Input(self, userInput):
         '''
         public facing method to access the functionality of FizzBuzzer
-        '''
-
-    
+        '''    
         return self.__return_fizz_buzz(userInput)
+    
+    def get_output(self, userInput):
+        '''
+        @param userInput: integer number
+        @return: the output of userInput in the form of a json file
+        '''
+         
+        self.json_output["output"] = self.__return_fizz_buzz(userInput)        
+        
+        return json.dumps(self.json_output)
+        
+        
     
 
 if __name__ == '__main__':
