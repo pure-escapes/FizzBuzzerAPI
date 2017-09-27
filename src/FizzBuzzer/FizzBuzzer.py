@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
 '''
 Created on 22 Sep 2017
 
-@author: DefaultUser
+@author: Christos Tsotskas
+
 '''
 
 class FizzBuzzer():
@@ -12,7 +14,7 @@ class FizzBuzzer():
     def __init__(self):
         pass
     
-    def check_User_Input(self, userInput):
+    def __return_fizz_buzz(self, userInput):
         '''
         Assess user input 
         
@@ -24,6 +26,15 @@ class FizzBuzzer():
         '''
     
         return "Fizz"*(userInput%3==0)+"Buzz"*(userInput%5==0) or str(userInput)
+        
+    
+    def check_User_Input(self, userInput):
+        '''
+        public facing method to access the functionality of FizzBuzzer
+        '''
+
+    
+        return self.__return_fizz_buzz(userInput)
     
 
 if __name__ == '__main__':

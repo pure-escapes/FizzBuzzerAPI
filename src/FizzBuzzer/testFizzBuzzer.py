@@ -1,12 +1,12 @@
+# -*- coding: utf-8 -*-
 '''
 Created on 22 Sep 2017
 
-@author: CHristos Tsotskas
+@author: Christos Tsotskas
 '''
 import unittest
 
 from FizzBuzzer import FizzBuzzer
-
 
 class testFizzBuzzer(unittest.TestCase):
 
