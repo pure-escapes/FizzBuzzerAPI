@@ -68,18 +68,23 @@ class testFizzBuzzer(unittest.TestCase):
     def test_a_json_file_is_generated_as_an_output(self):
         expected_value = 'FizzBuzz'
         check_for_json_type_output = False
+        received_output = None
         user_input = 15
         
-        received_value = self.FizzBuzzer.get_output(user_input)
+        received_json_output = self.FizzBuzzer.get_output(user_input)
         
         try:
-            check_for_json_type_output = json.loads(received_value)
+            received_output = json.loads(received_json_output)
             check_for_json_type_output = True
-        except ValueError as e:
-            print('invalid json: %s' % e)
-            
+        except ValueError as exception_of_value:
+            print('invalid json: %s' % exception_of_value)            
             
         self.assertTrue(check_for_json_type_output,"a valid json file was expected!")
+        
+        read_output = received_output['output']
+        
+        error_message = "The parsed valued of FizzBuzzer should be 'FizzBuzz', whereas " + str(read_output) + " was received"
+        self.assertEquals(read_output, expected_value, error_message)
     
 
 if __name__ == "__main__":
