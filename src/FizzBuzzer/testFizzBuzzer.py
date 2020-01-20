@@ -6,6 +6,7 @@ Created on 22 Sep 2017
 '''
 import unittest
 import json
+import xmlrunner
 
 from FizzBuzzer import FizzBuzzer
 
@@ -89,4 +90,4 @@ class testFizzBuzzer(unittest.TestCase):
 
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']
-    unittest.main()
+    unittest.main(testRunner=xmlrunner.XMLTestRunner(output='test-reports'))
