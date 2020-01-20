@@ -75,7 +75,7 @@ jobs:
           command: |
             . venv/bin/activate
             python -m unittest discover -s src/FizzBuzzer -v
-            coverage run FizzBuzzerAPI/src/FizzBuzzer/testFizzBuzzer.py
+            coverage run src/FizzBuzzer/testFizzBuzzer.py
             coverage report -m
             coverage html
       - store_artifacts:
