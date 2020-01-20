@@ -79,7 +79,7 @@ jobs:
             coverage report -m
             coverage html
       - store_artifacts:
-        path: htmlcov
+          path: htmlcov
       - sonarcloud/scan
 
       - store_artifacts:
