@@ -63,7 +63,7 @@ class testFizzBuzzer(unittest.TestCase):
             self.FizzBuzzer.check_User_Input(user_input)
         
         error_message = 'an exception with message "Integer was expected" should have been raised'
-        self.assertTrue('Integer was expected' in context.exception, error_message)
+        self.assertTrue('Integer was expected' in str(context.exception), error_message)
         
     def test_a_json_file_is_generated_as_an_output(self):
         expected_value = 'FizzBuzz'
