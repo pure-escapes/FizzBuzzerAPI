@@ -78,6 +78,7 @@ jobs:
             coverage run src/FizzBuzzer/testFizzBuzzer.py
             coverage report -m
             coverage html
+            coverage xml -i
       - store_artifacts:
           path: htmlcov     
 
